@@ -13,3 +13,5 @@ To run the code do the following
 ```python bookletify.py file.pdf```
 
 See `mini-booklet-Who_Framed_Matroid_Rabbit.pdf` for an example of the output
+
+When printing, print double sided with the option that flips pages on the short edge!

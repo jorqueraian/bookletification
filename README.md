@@ -11,3 +11,5 @@ with the page scaling being optional.
 
 To run the code do the following
 ```python bookletify.py file.pdf```
+
+See `mini-booklet-Who_Framed_Matroid_Rabbit.pdf` for an example of the output

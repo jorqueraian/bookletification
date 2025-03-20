@@ -28,9 +28,9 @@ num_pages = len(reader.pages)
 reader_pages = list(reader.pages) + ([None]*((4-(num_pages % 4))%4))
 num_pages += ((4-(num_pages % 4))%4)
 
-
-page_width = int(reader_pages[0].mediabox.width)
-page_height = int(reader_pages[1].mediabox.height)
+# Ok so sadly the printer I use is unable to work with A4 Paper. So this hard codes the right size
+page_width = 612 # int(reader_pages[0].mediabox.width)
+page_height = 792 # int(reader_pages[1].mediabox.height)
 
 for counter, i in enumerate(range(num_pages//2-1,-1,-1)):
     if counter % 2 == 0:

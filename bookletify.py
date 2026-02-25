@@ -9,6 +9,8 @@ import re
 input_pdf = None
 page_scaling = 1.1
 
+print("Attention user. This code has problems and has be deprecated. Please use bookification.py")
+
 if len(sys.argv) > 1 and sys.argv[1] != "-h":
     input_pdf = sys.argv[1]
     if len(sys.argv) > 2:
@@ -47,10 +49,10 @@ for counter, i in enumerate(range(num_pages//2-1,-1,-1)):
     translated_page = PageObject.create_blank_page(None, page_width, page_height)
     #translated_page.mergeScaledTranslatedPage(page_1, 1, 0, page_height)
     if page_1 is not None:
-        page_1.add_transformation(Transformation().scale(scale_factor,scale_factor).rotate(-90).translate(topbottom_margins,page_height))#.translate(0, page_height))
+        page_1.add_transformation(Transformation().scale(scale_factor,scale_factor).rotate(-90).translate(topbottom_margins,page_height+(1-scale_factor)*scale_factor*0))#.translate(0, page_height))
         translated_page.merge_page(page_1)
     if page_2 is not None:
-        page_2.add_transformation(Transformation().scale(scale_factor,scale_factor).rotate(-90).translate(topbottom_margins,page_height/2))#.translate(0, page_height))
+        page_2.add_transformation(Transformation().scale(scale_factor,scale_factor).rotate(-90).translate(topbottom_margins,page_height/2+(1-scale_factor)*scale_factor*0))#.translate(0, page_height))
         translated_page.merge_page(page_2)
     print(f"added pages {i}, {num_pages-i-1}")
     writer.add_page(translated_page)

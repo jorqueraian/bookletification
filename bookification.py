@@ -20,7 +20,7 @@ if len(sys.argv) > 1 and sys.argv[1] != "-h":
             if len(sys.argv) > 4:
                 blanks_at_end = int(sys.argv[4])
 elif input_pdf is None or (len(sys.argv) > 1 and sys.argv[1] == "-h"):
-    print(f"It seems like you need help! <> indicate required fields, and [] indicate optional fields.\nbookification <input pdf file> [page scaling = 1.1] [blanks at start = 0] [blanks at end = 0]")
+    print(f"It seems like you need help! <> indicates a required field, and [] indicates an optional field.\nbookification <input pdf file> [page scaling = 1.1] [blanks at start = 0] [blanks at end = 0]")
     sys.exit()
 
 total_blanks = blanks_at_start + blanks_at_end

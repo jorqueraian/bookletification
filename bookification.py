@@ -1,7 +1,7 @@
-from PyPDF2 import PdfReader, PdfWriter
-from PyPDF2 import PageObject
-from PyPDF2 import Transformation
-from PyPDF2.generic import AnnotationBuilder
+from pypdf import PdfReader, PdfWriter
+from pypdf import PageObject
+from pypdf import Transformation
+from pypdf import annotations
 import sys
 import re
 
@@ -117,12 +117,12 @@ for sig in range(num_signatures):
         print(f"added pages {first_page_in_sig+i}, {first_page_in_sig+pages_per_signature-i-1}")
         writer.add_page(translated_page)
 
-line_offset = 70
-annotation = AnnotationBuilder.line(
-    rect=(line_offset, page_height/2-1,page_width-line_offset, page_height/2+1),
-    p1=(line_offset, page_height/2),
-    p2=(page_width-line_offset, page_height/2)
-)
+#line_offset = 70
+#annotation = AnnotationBuilder.line(
+#    rect=(line_offset, page_height/2-1,page_width-line_offset, page_height/2+1),
+#    p1=(line_offset, page_height/2),
+#    p2=(page_width-line_offset, page_height/2)
+#)
 
 #writer.add_annotation(page_number=0, annotation=annotation,)
 #writer.add_annotation(page_number=counter, annotation=annotation)
